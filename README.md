@@ -1,5 +1,4 @@
 # NN1
-# NN1
 <details>
 <summary>Полное условие лабороторной работы</summary>
   
