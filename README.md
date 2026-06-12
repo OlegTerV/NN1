@@ -1,4 +1,4 @@
-# NN1
+# NNMA-4.1.1
 <details>
 <summary>Полное условие лабороторной работы</summary>
   
