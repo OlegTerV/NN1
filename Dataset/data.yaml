@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Cucumber', 'Tomato', 'Zucchini']
+
+roboflow:
+  workspace: labwork41
+  project: vegetables-instance-segmentation-d2rp7
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/labwork41/vegetables-instance-segmentation-d2rp7/dataset/3
