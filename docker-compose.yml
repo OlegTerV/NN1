@@ -1,6 +1,35 @@
 version: v2.40.3-desktop.1
 
 services:
+<<<<<<< Updated upstream
+=======
+  database:
+    container_name: qdrant-db
+    image: qdrant/qdrant:gpu-nvidia-latest
+    #command:
+
+    environment:
+      QDRANT__CLUSTER__ENABLED: "false"
+
+    ports:
+      - 6333:6333
+
+    networks:
+      - app-network
+
+    restart: unless-stopped
+    
+    runtime: nvidia
+    
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+>>>>>>> Stashed changes
   backend:
     build: backend/
     command: bentoml serve --port 3000 --host 0.0.0.0
@@ -8,9 +37,22 @@ services:
     ports: 
       - 3000:3000
 
+<<<<<<< Updated upstream
     networks:
       - app-network
 
+=======
+    depends_on:
+      - database
+
+    networks:
+      - app-network
+
+    environment:
+      - DB_SERVICE=http://database:6333
+      - YOLO_MODEL=yolov11n-face.pt
+
+>>>>>>> Stashed changes
 
   frontend:
     build: frontend/
@@ -24,9 +66,16 @@ services:
 
     networks:
       - app-network
+<<<<<<< Updated upstream
     environment:
       - BENTOML_SERVICE=http://backend:3000
 
+=======
+
+    environment:
+      - BENTOML_SERVICE=http://backend:3000
+    
+>>>>>>> Stashed changes
 networks:
   app-network:
     # Дополнительные параметры сети (опционально)

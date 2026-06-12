@@ -1,2 +1,9 @@
 ultralytics>=8.1
+<<<<<<< Updated upstream
 bentoml>=1.2.0
+=======
+bentoml>=1.2.0
+llama_index>=0.14.10
+sentence-transformers>=5.1.2
+qdrant_client>=1.16.0
+>>>>>>> Stashed changes

@@ -16,9 +16,16 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Копирование весов
+<<<<<<< Updated upstream
 COPY best.pt .
 # Копирование сервиса BentoML
 COPY service.py .
+=======
+COPY yolov11n-face.pt .
+# Копирование сервиса BentoML
+COPY service.py .
+COPY embedding.py .
+>>>>>>> Stashed changes
 
 # Создание bento (если нужно)
 # RUN bentoml build
@@ -26,4 +33,8 @@ COPY service.py .
 EXPOSE 3000
 
 # Запуск BentoML сервиса
+<<<<<<< Updated upstream
 CMD ["bentoml", "serve", "service:svc", "--port", "3000", "--host", "0.0.0.0"]
+=======
+CMD ["bentoml", "serve", "service:svc", "--port", "3000", "--host", "0.0.0.0"]  
+>>>>>>> Stashed changes
